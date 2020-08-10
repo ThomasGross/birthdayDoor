@@ -1,0 +1,462 @@
+// @import './reset.scss';
+@import "./breakpoints";
+@import "./include-media.scss";
+@import "./colors";
+@import "./zindex.scss";
+
+body {
+  // background-color: rgb(63,74,84) !important;
+  color: rgb(55, 56, 58);
+  // color: white;
+  font-family: "Lato";
+  font-family: "Permanent Marker", cursive;
+  font-size: 14px;
+
+  background-color: rgb(253, 195, 224);
+}
+
+@media only screen and (min-width: 770px) {
+  .body {
+    background-size: cover;
+  }
+}
+
+.main-container {
+  display: flex;
+  align-items: center;
+
+  background: url(../assets/fodselsdag-woman-dk-xKpRkJ9GxsSHzN070weKBQ.jpg)
+    repeat center;
+  background-size: cover;
+  padding: 50px 0;
+}
+
+.bg {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background: url(../assets/fodselsdag-woman-dk-xKpRkJ9GxsSHzN070weKBQ.jpg)
+    repeat center;
+  background-size: 165%;
+}
+
+@media only screen and (min-width: 770px) {
+  .bg {
+    display: none;
+  }
+}
+
+/* title graphic */
+.title {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.title img {
+  width: 90%;
+  height: auto;
+}
+
+/* mobile first grid layout */
+.grid-1 {
+  display: grid;
+  width: 96%;
+  max-width: 300px;
+  margin: 2% auto;
+  z-index: 9999;
+
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(9, 22em);
+  // grid-template-rows: auto;
+  grid-gap: 25px;
+
+  grid-template-areas:
+    "d1      d1       d1"
+    "d2      d2     d2"
+    "d3       d3     d3"
+    "d4       d4     d4"
+    "d5       d5      d5"
+    "d6      d6     d6"
+    "d7      d7      d7"
+    "d8       d8     d8"
+    "d9       d9     d9";
+}
+
+/* media query */
+@media only screen and (min-width: 770px) {
+  .grid-1 {
+    max-width: 900px;
+    grid-template-columns: repeat(9, 9fr);
+    grid-template-rows: repeat(3, 22em);
+    grid-template-areas:
+      "d1 d1 d1 d2 d2 d2 d3 d3 d3"
+      "d4 d4 d4 d5 d5 d5 d6 d6 d6"
+      "d7 d7 d7 d8 d8 d8 d9 d9 d9";
+    // grid-template-columns: repeat(6, 6fr);
+    // grid-template-rows: repeat(5, 200px);
+    // grid-template-areas:
+    //   "d1 d1 d1 d2 d2 d2"
+    //   "d3 d3 d3 d4 d4 d4"
+    //   "d5 d5 d5 d6 d6 d6"
+    //   "d7 d7 d7 d8 d8 d8"
+    //   "d9 d9 d9 d10 d10 d10";
+  }
+}
+
+/* individual items */
+.title {
+  grid-area: t;
+}
+.day-1 {
+  grid-area: d1;
+}
+.day-1 .back {
+  background: rgba(255, 255, 255, 0.2);
+}
+.day-1 .back .img {
+  background: url(../assets/massage.jpeg);
+}
+.day-2 {
+  grid-area: d2;
+}
+.day-2 .back {
+  background: rgba(255, 255, 255, 0.2);
+}
+.day-2 .back .img {
+  background: url(../assets/bio.jpg);
+}
+.day-3 {
+  grid-area: d3;
+}
+.day-3 .back {
+  background: rgba(255, 255, 255, 0.2);
+}
+.day-3 .back .img {
+  background: url(../assets/Slik.png);
+}
+.day-4 {
+  grid-area: d4;
+}
+.day-4 .back {
+  background: rgba(255, 255, 255, 0.2);
+}
+.day-4 .back .img {
+  background: url(../assets/walking.jpg);
+}
+.day-5 {
+  grid-area: d5;
+}
+.day-5 .back {
+  background: rgba(255, 255, 255, 0.2);
+}
+.day-5 .back .img {
+  background: url(../assets/madlavning.jpg);
+}
+.day-6 {
+  grid-area: d6;
+}
+.day-6 .back {
+  background: rgba(255, 255, 255, 0.2);
+}
+.day-6 .back .img {
+  background: url(../assets/panda.jpg);
+}
+.day-7 {
+  grid-area: d7;
+}
+.day-7 .back {
+  background: rgba(255, 255, 255, 0.2);
+}
+.day-7 .back .img {
+  background: url(../assets/catlitter.jpg);
+}
+.day-8 {
+  grid-area: d8;
+}
+.day-8 .back {
+  background: rgba(255, 255, 255, 0.2);
+}
+.day-8 .back .img {
+  background: url(../assets/ed4fbff5590067af9c42204900847efee8e6d983.jpg);
+}
+.day-9 {
+  grid-area: d9;
+}
+.day-9 .back {
+  background: rgba(255, 255, 255, 0.2);
+}
+.day-9 .back .img {
+  background: url(../assets/cleaning.jpg);
+}
+
+/* door styles */
+
+.grid-1 input {
+  display: none;
+}
+
+label {
+  perspective: 1000px;
+  transform-style: preserve-3d;
+  cursor: pointer;
+
+  display: flex;
+  min-height: 100%;
+  width: 100%;
+  height: 120px;
+}
+
+.door {
+  width: 100%;
+  max-width: 300px;
+  transform-style: preserve-3d;
+  transition: all 300ms;
+  border: 2px dashed transparent;
+  border-radius: 3px;
+}
+
+.door div {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  backface-visibility: hidden;
+
+  border-radius: 2px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  /* typography */
+  font-family: "Kalam", cursive;
+  font-family: "Permanent Marker", cursive;
+  color: #385052;
+  font-size: 2em;
+  font-weight: bold;
+  text-shadow: 1px 1px 0 rgba(255, 255, 255, 0.2);
+  hyphens: auto;
+}
+
+.door .back {
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-color: white;
+  transform: rotateY(180deg);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+
+  border: solid white;
+  border-width: 15px 15px 65px 15px;
+
+  p {
+    position: absolute;
+    bottom: -70px;
+    transform: rotate(5deg);
+    line-height: 25px;
+    color: #2e313d;
+    text-align: center;
+    // color: rgb(253, 181, 210);
+    // color: rgb(243, 186, 118);
+    // text-shadow: 1px 1px 0 rgba(253, 139, 39, 0.5);
+  }
+
+  .img {
+    opacity: 0.8;
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+  }
+}
+
+label:hover .door {
+  border-color: #385052;
+}
+
+:checked + .door {
+  transform: rotateY(180deg);
+}
+
+.heart {
+  position: absolute;
+  left: -50%;
+  top: -50%;
+  transform: translate(50%, 50%) rotate(-45deg);
+  background-color: red;
+  height: 100%;
+  width: 100%;
+  z-index: 3;
+  border-radius: 1%;
+}
+
+.heart:before,
+.heart:after {
+  content: "";
+  background-color: red;
+  border-radius: 50%;
+  height: 100%;
+  position: absolute;
+  width: 100%;
+}
+
+.heart:before {
+  top: -50%;
+  left: 0;
+}
+
+.heart::after {
+  right: -50%;
+}
+
+// fireworks
+
+.pyro {
+  position: fixed;
+  top: 0;
+  left: 0;
+  overflow: hidden;
+  width: 100vh;
+  height: 100vh;
+}
+
+@media only screen and (min-width: 770px) {
+  .pyro {
+    width: 100vw;
+  }
+}
+
+$particles: 50;
+$width: 500;
+$height: 500;
+
+// Create the explosion...
+$box-shadow: ();
+$box-shadow2: ();
+@for $i from 0 through $particles {
+  $box-shadow: $box-shadow,
+    random($width)-$width /
+      2 +
+      px
+      random($height)-$height /
+      1.2 +
+      px
+      hsl(random(360), 100, 50);
+  $box-shadow2: $box-shadow2, 0 0 #fff;
+}
+@mixin keyframes($animationName) {
+  @-webkit-keyframes #{$animationName} {
+    @content;
+  }
+
+  @-moz-keyframes #{$animationName} {
+    @content;
+  }
+
+  @-o-keyframes #{$animationName} {
+    @content;
+  }
+
+  @-ms-keyframes #{$animationName} {
+    @content;
+  }
+
+  @keyframes #{$animationName} {
+    @content;
+  }
+}
+
+@mixin animation-delay($settings) {
+  -moz-animation-delay: $settings;
+  -webkit-animation-delay: $settings;
+  -o-animation-delay: $settings;
+  -ms-animation-delay: $settings;
+  animation-delay: $settings;
+}
+
+@mixin animation-duration($settings) {
+  -moz-animation-duration: $settings;
+  -webkit-animation-duration: $settings;
+  -o-animation-duration: $settings;
+  -ms-animation-duration: $settings;
+  animation-duration: $settings;
+}
+
+@mixin animation($settings) {
+  -moz-animation: $settings;
+  -webkit-animation: $settings;
+  -o-animation: $settings;
+  -ms-animation: $settings;
+  animation: $settings;
+}
+
+@mixin transform($settings) {
+  transform: $settings;
+  -moz-transform: $settings;
+  -webkit-transform: $settings;
+  -o-transform: $settings;
+  -ms-transform: $settings;
+}
+
+.pyro > .before,
+.pyro > .after {
+  position: absolute;
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  box-shadow: $box-shadow2;
+  @include animation(
+    (
+      1s bang ease-out infinite backwards,
+      1s gravity ease-in infinite backwards,
+      5s position linear infinite backwards
+    )
+  );
+}
+
+.pyro > .after {
+  @include animation-delay((1.25s, 1.25s, 1.25s));
+  @include animation-duration((1.25s, 1.25s, 6.25s));
+}
+
+@include keyframes(bang) {
+  to {
+    box-shadow: $box-shadow;
+  }
+}
+
+@include keyframes(gravity) {
+  to {
+    @include transform(translateY(200px));
+    opacity: 0;
+  }
+}
+
+@include keyframes(position) {
+  0%,
+  19.9% {
+    margin-top: 10%;
+    margin-left: 40%;
+  }
+  20%,
+  39.9% {
+    margin-top: 40%;
+    margin-left: 30%;
+  }
+  40%,
+  59.9% {
+    margin-top: 20%;
+    margin-left: 70%;
+  }
+  60%,
+  79.9% {
+    margin-top: 30%;
+    margin-left: 20%;
+  }
+  80%,
+  99.9% {
+    margin-top: 30%;
+    margin-left: 80%;
+  }
+}
